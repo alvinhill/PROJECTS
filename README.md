@@ -148,7 +148,7 @@ See the video at my portfolio site:  http://alvinrainhill.com/EXP-X3.html
 
 
 # BANK RECONCILIATION PROGRAM
-## Code not available at this time due to possible commercial interest. 
+
 
 I always had trouble reconciling my bank account.  (yes, I still write checks.)
 
@@ -179,9 +179,9 @@ The upgrade path for this is:
 1.)	Make it web based.
 2.)	Import other file formats.
 3.)	Export the working file to and SQL database to allow advanced data manipulation.
+## Code not available at this time due to possible commercial interest. 
 
-# #GUITAR STORE
-
+# GUITAR STORE
 ![GUITAR-STORE](https://github.com/alvinhill/PROJECTS/assets/132315899/474ef0b7-57c2-4ec5-8b12-29d773600dd9)
 
 This program allows me to select a guitar to order.  I can select the Brand, Model, Finish and Neck.  
