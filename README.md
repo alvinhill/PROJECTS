@@ -28,9 +28,8 @@ See the video at my portfolio site:  http://alvinrainhill.com/EXP-X3.html
 3.)	Code a “Create New Account” for new customers.
 4.)	Finish or delete the “results” and “test” classes.
 
-# Code Example
 
-# ATM CODE
+## ATM CODE Example
 ## This class does several things.
 
 1.)	It validates the pin code.
@@ -143,12 +142,8 @@ See the video at my portfolio site:  http://alvinrainhill.com/EXP-X3.html
             SQLCONNECT.Close();
         }
     }
-
-![BANK-REC](https://github.com/alvinhill/PROJECTS/assets/132315899/814e0d3d-b9f4-4c7c-bc8b-ed44a5e3854a)
-
-
 # BANK RECONCILIATION PROGRAM
-
+![BANK-REC](https://github.com/alvinhill/PROJECTS/assets/132315899/814e0d3d-b9f4-4c7c-bc8b-ed44a5e3854a)
 
 I always had trouble reconciling my bank account.  (yes, I still write checks.)
 
@@ -437,7 +432,7 @@ The upgrade path for this is:
         }
      }
 
-# Sstatistic program.  
+# Statistic Program.  
 
 ![STATISTIC-PROGRAM](https://github.com/alvinhill/PROJECTS/assets/132315899/8b11025d-0f13-42c5-8d2d-d4918df90972)
 
@@ -763,35 +758,57 @@ Upgrade path:
 ## Payroll Program Code
 
  class HOURLY
+ 
         // PARENT CLASS
     {
+    
         public string Name { set; get; }
+        
         public string SSN { set; get; }
+        
         public decimal  Wage {set;get;}
+        
         public decimal  Hours { set; get; }
+        
         public string Getpaycat(string TYPE)
+        
         {
+        
             return TYPE  + "  interface data";
+            
         }
       public virtual   decimal  GetPay(decimal  Wage, decimal  Hours)
+      
         {
            return ( Wage *  Hours);
+           
         }
       }
 // CHILD CLASS
  class COMM :HOURLY 
+ 
         // THIS CLASS IS USING THE NAME AND SS# PROPERTIES AND OVERRIDING THE PAY METHOD
+        
         // WITH A COMMISION METHOD 
+        
         // THE OVERRIDING METHOD SEEMS TO NEED THE SAME NAME
+        
         // THE OVERRIDDING METHOD MUST HAVE THE SAME NUMBER OF PARAMETERS
+        
     {
+    
         public decimal SalesAmt {set;get;}
+        
         public decimal PerAmt { set; get; }
+        
         public override  decimal GetPay(decimal SalesAmt, decimal PerAmt)
+        
 
         {
             return (SalesAmt  * (PerAmt * .01m));
+            
         }
+        
     }
 
 
