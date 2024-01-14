@@ -49,7 +49,6 @@ See the video at my portfolio site:  http://alvinrainhill.com/EXP-X3.html
         // static public string INPUT { get; set; } = "7111";
         static public string INPUT;
         //= "7111";
-
         public string[] match = new string[10] { "9111", "7111", "8111", "4111", "5111", "6111", "3111", "2111", "1111", "1001"};// 10
       //public string[] match = new string[10] { "9111", "7111", "8111", "4111", "5111", "6111", "3111", "2111", "1111", "1001" };// 10
 
@@ -63,20 +62,16 @@ See the video at my portfolio site:  http://alvinrainhill.com/EXP-X3.html
             {
                 balance  = value;
             }
-
         }
-
         public string PIN
         {
             get
             {
                 return pin;
             }
-
             set
             {
                 pin = value;
-
                 for (int i = 0; i < match.Length ; i++)
                 {
                     if (pin == match[i])
@@ -84,7 +79,6 @@ See the video at my portfolio site:  http://alvinrainhill.com/EXP-X3.html
                         INPUT = pin;
                         status = true;
                       //  System.Windows.Forms.MessageBox.Show("GOOD");
-                        
                         break;
                     }
                     else if (i ==9)//9
@@ -92,9 +86,7 @@ See the video at my portfolio site:  http://alvinrainhill.com/EXP-X3.html
                         System.Windows.Forms.MessageBox.Show("BAD PIN");
                     }
                 }
-               
             }
-
         }
            public decimal MONEY
             {
@@ -106,71 +98,48 @@ See the video at my portfolio site:  http://alvinrainhill.com/EXP-X3.html
             {
                 money = value;
             }
-
             }
-
         // DEPOSIT METHOD
         public decimal DEPOSIT()
         {
-           
-            balance = balance + money;
-
+             balance = balance + money;
          if (money > 0)
            {
                 VCODE = "DEPOSIT";
                 RECORD();
-                
-         }
+          }
             return balance;
-
         }
         // WITHDRAWAL METHOD
         public decimal WITHDRAW()
         {
-           
             balance = balance - money;
             if (balance < 0)
             {
                 VCODE = "WITHDRAWAL";
                 RECORD();
             }
-            
             return balance;
         }
-      
         public void RECORD()
-
         {
             // THIS WORKS TO PUT A VARIABLE INTO THE DATABASE !!!
-           
-
             SqlConnection SQLCONNECT = new SqlConnection(@"Data Source = SATURN; Initial Catalog = NEWBANK; Integrated Security = true");
             SqlCommand SQLCMD = new SqlCommand("select * from ACCOUNTS2 WHERE PIN ='"+INPUT +"'", SQLCONNECT);
-
             SQLCONNECT.Open();
-
             SqlDataReader SQLREADER = SQLCMD.ExecuteReader();
-         
             SQLREADER.Read();
-
             string DPIN;
             string DACCTNUMBER;
-        
             DPIN = SQLREADER.GetValue(1).ToString();
             DACCTNUMBER = SQLREADER.GetValue(2).ToString();
-
             SQLCONNECT.Close();
-          
             SQLCONNECT.Open();
             // ENTER DATA INTO DATABASE
            var NEWENTRY = "Insert into ACCOUNTS2(PIN,AcctNumber,TransData,CODE) values('" + DPIN + "','" + DACCTNUMBER + "'," + balance  + ", '" + VCODE + "')";// GOOD
-
             SQLCMD = new SqlCommand(Convert.ToString(NEWENTRY), SQLCONNECT);
-
             SQLCMD.ExecuteNonQuery();
-
             SQLCMD.Dispose();
             SQLCONNECT.Close();
-             
         }
     }
