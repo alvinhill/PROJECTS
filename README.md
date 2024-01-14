@@ -1,4 +1,4 @@
-[STATISTIC PROGRAM CODE.txt](https://github.com/alvinhill/PROJECTS/files/13929935/STATISTIC.PROGRAM.CODE.txt)
+
 ![ATM](https://github.com/alvinhill/PROJECTS/assets/132315899/bfcc84d9-b951-4fd1-9ac1-84da5267e742)
 # ATM Program
 
@@ -760,7 +760,7 @@ Upgrade path:
 1.)	Add more info like last name, department code, date, pay period etc.
 2.)	 Send the data to an SQL database and use it run queries and get reports such as department wage costs, monthly or yearly employee cost totals etc.
 
-## pAYROLL pROGRAM cODE
+## Payroll Program Code
 
  class HOURLY
         // PARENT CLASS
