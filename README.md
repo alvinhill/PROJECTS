@@ -29,6 +29,15 @@ See the video at my portfolio site:  http://alvinrainhill.com/EXP-X3.html
 4.)	Finish or delete the “results” and “test” classes.
 
 # Code Example
+
+# ATM CODE
+## This class does several things.
+
+1.)	It validates the pin code.
+2.)	Supplies the transaction label.
+3.)	Does the transaction math.
+4.)	Opens the database and inputs the value into the database.
+
  class DATA1
     {
         private decimal balance ;
